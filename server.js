@@ -77,7 +77,7 @@ app.get('/escola', async (request, response) =>{
 
 //Update
 app.put('/escola/:idEscola', async(request,response) =>{
-    const id = await parseInt(request.params.escola);
+    const id = await parseInt(request.params.idEscola);
     const updateEscola = await prisma.escola.update(
         {
         where: {
