@@ -1,4 +1,4 @@
-import express, { request, response } from 'express';
+import express from 'express';
 import alunoRoutes from './routes/alunoRoutes.js';
 
 const routesAlunos = alunoRoutes;
@@ -7,20 +7,6 @@ const app = express();
 app.use(express.json());
 
 app.use('/aluno',routesAlunos);
-
-
-app.patch('/aluno/:alunoID', async (request, response) => {
-    const id = await parseInt(request.params.alunoID)
-    const alterarStatus = await prisma.aluno.update({
-        where: {
-            alunoID: id,
-        },
-        data: {
-            presenca: request.body.presenca
-        }
-    });
-    response.status(201).json(alterarStatus)
-});
 
 
 //Escola

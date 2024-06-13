@@ -17,4 +17,8 @@ router.delete('/:alunoID', async (req, res) => {
     const id = await parseInt(req.params.alunoID);
     alunoServices.deletarAluno(res,req,id);
 })
+router.patch('/:alunoID', async (req, res) => {
+    const id = await parseInt(req.params.alunoID);
+    alunoServices.mudarPresenca(res,req,id);
+})
 export default router;
