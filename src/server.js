@@ -1,55 +1,13 @@
 import express, { request, response } from 'express';
-import { PrismaClient } from '@prisma/client';
+import alunoRoutes from './routes/alunoRoutes.js';
 
-const prisma = new PrismaClient();
-
+const routesAlunos = alunoRoutes;
 const app = express();
+
 app.use(express.json());
 
-//Create
-app.post('/aluno', async (request, response) => {
-    const aluno = await prisma.aluno.create({
-        data: {
-            nome: request.body.nome,
-            presenca: request.body.presenca
-        }
-    })
-    response.status(201).json(aluno);
-})
+app.use('/aluno',routesAlunos);
 
-//Read
-app.get('/aluno', async (request, response) => {
-    const alunos = await prisma.aluno.findMany();
-    response.status(200).json(alunos);
-});
-
-//Update
-app.put('/aluno/:alunoID', async (request, response) => {
-    const id = await parseInt(request.params.alunoID);
-    const updateAluno = await prisma.aluno.update(
-
-        {
-            where: {
-                alunoID: id,
-            },
-            data: {
-                nome: request.body.nome,
-                presenca: request.body.presenca
-            }
-        });
-    response.status(201).json(updateAluno);
-});
-
-//Delete
-app.delete('/aluno/:alunoID', async (request, response) => {
-    const id = await parseInt(request.params.alunoID);
-    const deleteAluno = await prisma.aluno.delete({
-        where: {
-            alunoID: id,
-        },
-    });
-    response.status(202).json(deleteAluno);
-});
 
 app.patch('/aluno/:alunoID', async (request, response) => {
     const id = await parseInt(request.params.alunoID)
@@ -64,7 +22,9 @@ app.patch('/aluno/:alunoID', async (request, response) => {
     response.status(201).json(alterarStatus)
 });
 
+
 //Escola
+
 
 //Create
 app.post('/escola', async (request, response) => {
