@@ -4,21 +4,26 @@ import alunoServices from '../services/alunoServices.js';
 const router = Router();
 
 router.get('/', async (req, res) => {
-    alunoServices.lerAluno(res,req);
+    await alunoServices.lerAlunos(res, req);
 });
+
 router.post('/', async (req, res) => {
-    alunoServices.cadastrarAluno(res,req);
-})
+    await alunoServices.cadastrarAluno(res, req);
+});
+
 router.put('/:alunoID', async (req, res) => {
-    const id = await parseInt(req.params.alunoID);
-    alunoServices.atualizarAluno(res,req,id);
-})
+    const id = parseInt(req.params.alunoID);
+    await alunoServices.atualizarAluno(res, req, id);
+});
+
 router.delete('/:alunoID', async (req, res) => {
-    const id = await parseInt(req.params.alunoID);
-    alunoServices.deletarAluno(res,req,id);
-})
+    const id = parseInt(req.params.alunoID);
+    await alunoServices.deletarAluno(res, req, id);
+});
+
 router.patch('/:alunoID', async (req, res) => {
-    const id = await parseInt(req.params.alunoID);
-    alunoServices.mudarPresenca(res,req,id);
-})
+    const id = parseInt(req.params.alunoID);
+    await alunoServices.mudarPresenca(res, req, id);
+});
+
 export default router;
