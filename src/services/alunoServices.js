@@ -3,12 +3,12 @@ import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
 export default {
-    async lerAluno(res,req) {
+    async lerAlunos(res, req) {
         const alunos = await prisma.aluno.findMany();
         res.status(200).json(alunos);
     },
 
-    async cadastrarAluno(res,req) {
+    async cadastrarAluno(res, req) {
         const aluno = await prisma.aluno.create({
             data: {
                 nome: req.body.nome,
@@ -18,7 +18,7 @@ export default {
         res.status(201).json(aluno);
     },
 
-    async atualizarAluno(res,req,id) {
+    async atualizarAluno(res, req, id) {
         const updateAluno = await prisma.aluno.update(
             {
                 where: {
@@ -32,7 +32,7 @@ export default {
         res.status(201).json(updateAluno);
     },
 
-    async deletarAluno(res,req,id) {
+    async deletarAluno(res, req, id) {
         const deleteAluno = await prisma.aluno.delete({
             where: {
                 alunoID: id,
@@ -41,7 +41,7 @@ export default {
         res.status(202).json(deleteAluno);
     },
 
-    async mudarPresenca(res,req,id) {
+    async mudarPresenca(res, req, id) {
         const alterarStatus = await prisma.aluno.update({
             where: {
                 alunoID: id,
@@ -50,6 +50,6 @@ export default {
                 presenca: req.body.presenca
             }
         });
-        res.status(201).json(alterarStatus)
+        res.status(201).json(alterarStatus);
     }
 };
