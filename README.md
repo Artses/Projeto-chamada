@@ -9,19 +9,37 @@ Registro de Chamadas: Registra as chamadas realizadas por meio do NFC.
 
 # Instalação:
 Clone este repositório.<br>
-Execute o programa em sua máquina.
+Copie o projeto com o comando:
+```
+$ git clone https://github.com/Artses/Projeto-chamada.git
+```
+e abra ele no VSCode ou sua IDE de preferência
 
 # Configuração:
-Adicione os códigos NFC dos usuários cadastrados no arquivo users.json.<br>
-Configure o endereço do banco de dados
+inicie o node na copia do projeto ultilizando o comando:
+```
+$ npm install node   
+```
+(Comando para verificar a versão do node e npm)
+```
+$ node -v
+
+$ npm -v
+```
+(Caso não tenha o npm instalado use o comando:)
+```
+$ npm install -g npm
+```
 
 # Execução:
-Copie o projeto com o comando:
-git clone https://github.com/Artses/Projeto-chamada.git
+Execute o comando abaixo para iniciar a aplicação:
+```
+$ node src/server.js
+```
 
 # Tecnologias Utilizadas
-PHP<br>
-NFC Library (exemplo: nfcpy)<br>
-Leitor NFC
+JavaScript<br>
+Node<br>
+PrismaORM
 
 # Espero que isso ajude! Se precisar de mais alguma informação ou tiver outras dúvidas, fique à vontade para perguntar. 😊
