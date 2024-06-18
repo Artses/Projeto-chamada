@@ -7,6 +7,11 @@ Verificação de NFC: O programa lê o código do NFC e compara com o código ca
 Usuários Cadastrados: Mantém uma lista de usuários com seus respectivos códigos NFC.<br>
 Registro de Chamadas: Registra as chamadas realizadas por meio do NFC.
 
+# Tecnologias
+JavaScript<br>
+Node<br>
+PrismaORM
+
 # Instalação:
 Clone este repositório.<br>
 Copie o projeto com o comando:
@@ -37,9 +42,4 @@ Execute o comando abaixo para iniciar a aplicação:
 $ node src/server.js
 ```
 
-# Tecnologias Utilizadas
-JavaScript<br>
-Node<br>
-PrismaORM
 
-# Espero que isso ajude! Se precisar de mais alguma informação ou tiver outras dúvidas, fique à vontade para perguntar. 😊
