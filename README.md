@@ -16,8 +16,8 @@ Adicione os códigos NFC dos usuários cadastrados no arquivo users.json.<br>
 Configure o endereço do banco de dados
 
 # Execução:
-Execute o programa.<br>
-Aproxime o dispositivo NFC para verificar a compatibilidade com os códigos cadastrados.
+Copie o projeto com o comando:
+git clone https://github.com/Artses/Projeto-chamada.git
 
 # Tecnologias Utilizadas
 PHP<br>
