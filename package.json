@@ -12,10 +12,15 @@
   "license": "ISC",
   "dependencies": {
     "@prisma/client": "^5.15.0",
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "node": "^20.15.0"
   },
   "devDependencies": {
     "prisma": "^5.15.0"
   },
+  "prisma": {
+  "schema": "./src/prisma/schema.prisma"
+  },
   "description": ""
+  
 }
