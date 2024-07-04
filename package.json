@@ -22,5 +22,8 @@
     "prisma": "^5.15.0",
     "swagger-autogen": "^2.23.7"
   },
+  "prisma":{
+    "schema":"./src/prisma/schema.prisma"
+  },
   "description": ""
 }

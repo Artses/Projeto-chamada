@@ -22,6 +22,6 @@ router.delete('/:idEscola', async (req, res) => {
 });
 
 router.post('/login', async (res, req) => {
-    await escolaServices.Logar(res,req);
+    await escolaServices.Logar(res, req);
 });
 export default router;
