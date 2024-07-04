@@ -188,7 +188,7 @@
       }
     },
     "/escola/login": {
-      "post": {
+      "get": {
         "description": "",
         "responses": {
           "default": {

@@ -41,5 +41,3 @@ Execute o comando abaixo para iniciar a aplicação:
 ```
 $ node src/server.js
 ```
-
-
