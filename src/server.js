@@ -1,9 +1,11 @@
 import express from 'express';
 import alunoRoutes from './routes/alunoRoutes.js';
 import escolaRoutes from "./routes/escolaRoutes.js";
+import professorRoutes from "./routes/professorRoutes.js"
 
 const routesAlunos = alunoRoutes;
 const routesEscola = escolaRoutes;
+const routesProfessor = professorRoutes
 
 const app = express();
 app.use(express.json());
@@ -14,4 +16,9 @@ app.use('/aluno',routesAlunos);
 //Escola
 app.use('/escola', routesEscola);
 
-app.listen(3000);
+//Professor
+app.use('/professor', routesProfessor);
+
+app.listen(process.env.PORT, () =>{
+    console.log('Server is running on port '+ process.env.PORT);
+});

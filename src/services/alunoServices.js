@@ -22,7 +22,7 @@ export default {
         const updateAluno = await prisma.aluno.update(
             {
                 where: {
-                    alunoID: id,
+                    id: id,
                 },
                 data: {
                     nome: req.body.nome,
@@ -35,7 +35,7 @@ export default {
     async deletarAluno(res, req, id) {
         const deleteAluno = await prisma.aluno.delete({
             where: {
-                alunoID: id,
+                id: id,
             },
         });
         res.status(202).json(deleteAluno);
@@ -44,7 +44,7 @@ export default {
     async mudarPresenca(res, req, id) {
         const alterarStatus = await prisma.aluno.update({
             where: {
-                alunoID: id,
+                id: id,
             },
             data: {
                 presenca: req.body.presenca
