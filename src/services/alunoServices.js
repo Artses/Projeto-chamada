@@ -11,8 +11,8 @@ export default {
     async cadastrarAluno(res, req) {
         const aluno = await prisma.aluno.create({
             data: {
-                nome: req.body.nome,
-                presenca: req.body.presenca
+                Nome: req.body.nome,
+                Status: req.body.status
             }
         })
         res.status(201).json(aluno);
@@ -22,11 +22,11 @@ export default {
         const updateAluno = await prisma.aluno.update(
             {
                 where: {
-                    id: id,
+                    idAluno: id,
                 },
                 data: {
-                    nome: req.body.nome,
-                    presenca: req.body.presenca
+                    Nome: req.body.nome,
+                    Status: req.body.status
                 }
             });
         res.status(201).json(updateAluno);
@@ -35,7 +35,7 @@ export default {
     async deletarAluno(res, req, id) {
         const deleteAluno = await prisma.aluno.delete({
             where: {
-                id: id,
+                idAluno: id,
             },
         });
         res.status(202).json(deleteAluno);
@@ -44,10 +44,10 @@ export default {
     async mudarPresenca(res, req, id) {
         const alterarStatus = await prisma.aluno.update({
             where: {
-                id: id,
+                idAluno: id,
             },
             data: {
-                presenca: req.body.presenca
+                Status: req.body.status
             }
         });
         res.status(201).json(alterarStatus);
