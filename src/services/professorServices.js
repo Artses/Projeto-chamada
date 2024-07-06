@@ -30,6 +30,7 @@ export default {
         });
         res.status(202).json(professores);
     },
+    
     async deletarProfessor(req, res, id){
         const professores = await prisma.professor.delete({
             where:{
@@ -37,5 +38,22 @@ export default {
             },
         });
         res.status(200).json(professores)
+    },
+    async Logar(req, res) {
+        const {nome, senha} = req.body;
+        const verificarLogin = await prisma.professor.findMany({
+            where:{
+                Nome: nome,
+                AND:{
+                    Senha: senha
+                }
+            },
+        })
+        if (verificarLogin != null){
+            res.status(200).json(`Logou com o usuario ${nome}`);
+        }
+        else{
+            res.status(200).json(`login ou senha incorreto`);
+        }
     }
 }

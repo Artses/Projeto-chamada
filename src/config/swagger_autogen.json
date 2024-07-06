@@ -188,11 +188,28 @@
       }
     },
     "/escola/login": {
-      "get": {
+      "post": {
         "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "example": "any"
+                },
+                "senha": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
         "responses": {
-          "default": {
-            "description": ""
+          "200": {
+            "description": "OK"
           }
         }
       }
@@ -278,6 +295,33 @@
             "in": "path",
             "required": true,
             "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/professor/login": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "nome": {
+                  "example": "any"
+                },
+                "senha": {
+                  "example": "any"
+                }
+              }
+            }
           }
         ],
         "responses": {

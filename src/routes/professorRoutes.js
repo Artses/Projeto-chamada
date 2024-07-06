@@ -20,4 +20,8 @@ router.delete('/:professorId', async (req, res) =>{
     const id = parent(req.params.professorId);
     await professorServices.deletarProfessor(req, res, id)
 });
+
+router.post('/login', async (res, req) => {
+    await professorServices.Logar(res, req);
+});
 export default router;
