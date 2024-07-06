@@ -47,5 +47,23 @@ export default {
             },
         });
         res.status(202).json(deleteEscola);
+    },
+
+    async Logar(req, res) {
+        const {email, senha} = req.body;
+        const verificarLogin = await prisma.escola.findMany({
+            where:{
+                Email: email,
+                AND:{
+                    Senha: senha
+                }
+            },
+        })
+        if (verificarLogin != null){
+            res.status(200).json(`Logou com o usuario ${email}`);
+        }
+        else{
+            res.status(200).json(`Email ou senha incorreto`);
+        }
     }
 };

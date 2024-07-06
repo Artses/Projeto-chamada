@@ -1,3 +1,5 @@
 # Use essa string em um arquivo .env para se conectar ao banco de dados
 
 DATABASE_URL="mysql://johndoe:randompassword@localhost:3306/mydb"
+
+PORT="8080"

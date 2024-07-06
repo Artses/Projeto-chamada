@@ -8,9 +8,11 @@ datasource db {
 }
 
 model aluno {
-  id     Int     @id @default(autoincrement())
-  nome   String  @db.VarChar(50)
-  status Boolean
+
+  idAluno   Int     @id @default(autoincrement())
+  Nome   String  @db.VarChar(50)
+  Status Boolean
+
 }
 
 model escola {
@@ -24,7 +26,9 @@ model escola {
 }
 
 model professor {
-  professorId Int    @id @default(autoincrement())
+
+  idProfessor Int    @id @default(autoincrement())
+
   Nome        String @db.VarChar(100)
   Senha       String @db.VarChar(100)
   Materia     String @db.VarChar(100)
