@@ -3,6 +3,7 @@ import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
 export default {
+
     async cadastrarProfessor(req, res) {
         const professores = await prisma.professor.create({
             data:{

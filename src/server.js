@@ -10,6 +10,7 @@ import professorRoutes from "./routes/professorRoutes.js"
 
 const routesAlunos = alunoRoutes;
 const routesEscola = escolaRoutes;
+
 const routesProfessor = professorRoutes;
 
 const app = express();
