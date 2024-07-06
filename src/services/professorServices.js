@@ -5,9 +5,11 @@ const prisma = new PrismaClient();
 export default {
     async cadastrarProfessor(req, res) {
         const professores = await prisma.professor.create({
-            Nome: req.body.nome,
-            Senha: req.body.senha,
-            Materia: req.body.materia
+            data:{
+                Nome: req.body.nome,
+                Senha: req.body.senha,
+                Materia: req.body.materia
+            }
         });
         res.status(200).json(professores);
     },
@@ -20,7 +22,7 @@ export default {
     async atualizarProfessor(req, res, id) {
         const professores = await prisma.professor.update({
             where: {
-                professorId: id
+                idProfessor: id
             },
             data: {  
                 Nome: req.body.nome,   
@@ -34,7 +36,7 @@ export default {
     async deletarProfessor(req, res, id){
         const professores = await prisma.professor.delete({
             where:{
-                professorId: id 
+                idProfessor: id 
             },
         });
         res.status(200).json(professores)
