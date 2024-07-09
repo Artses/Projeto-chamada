@@ -4,26 +4,18 @@ import { readFile } from 'fs/promises';
 const swaggerDocument = JSON.parse(
     await readFile(new URL('./config/swagger_autogen.json', import.meta.url))
 );
-import alunoRoutes from './routes/alunoRoutes.js';
-import escolaRoutes from "./routes/escolaRoutes.js";
-import professorRoutes from "./routes/professorRoutes.js"
-
-const routesAlunos = alunoRoutes;
-const routesEscola = escolaRoutes;
-
-const routesProfessor = professorRoutes;
 
 const app = express();
 app.use(express.json());
 
 //Aluno
-app.use('/aluno', routesAlunos);
+app.use('/aluno', alunoRoutes);
 
 //Escola
-app.use('/escola', routesEscola);
+app.use('/escola', escolaRoutes);
 
 //Professor
-app.use('/professor', routesProfessor);
+app.use('/professor', professorRoutes);
 
 app.use('/Swagger', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
