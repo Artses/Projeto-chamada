@@ -23,7 +23,7 @@ e abra ele no VSCode ou sua IDE de preferência
 # Configuração:
 inicie o node na copia do projeto ultilizando o comando:
 ```
-$ npm install node   
+$ npm -i
 ```
 (Comando para verificar a versão do node e npm)
 ```
