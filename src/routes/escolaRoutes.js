@@ -16,6 +16,11 @@ router.put('/:idEscola', async (req, res) => {
     await escolaServices.atualizarEscola(req, res, id);
 });
 
+router.patch('/atualizarSenha/:idEscola', async (req, res) => {
+    const id = parseInt(req.params.idEscola);
+    await escolaServices.atualizarSenha(req, res, id);
+});
+
 router.delete('/:idEscola', async (req, res) => {
     const id = parseInt(req.params.idEscola);
     await escolaServices.deletarEscola(req, res, id)
