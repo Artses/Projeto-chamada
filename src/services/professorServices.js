@@ -39,10 +39,8 @@ export default {
             where: {
                 idProfessor: id
             },
-            data: {  
-                Nome: req.body.nome,   
-                Senha: req.body.senha,      
-                Materia: req.body.materia
+            data: { 
+                Senha: req.body.senha
             }
         });
         res.status(202).json(professores);
