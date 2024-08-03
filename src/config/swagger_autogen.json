@@ -350,13 +350,7 @@
             "schema": {
               "type": "object",
               "properties": {
-                "nome": {
-                  "example": "any"
-                },
                 "senha": {
-                  "example": "any"
-                },
-                "materia": {
                   "example": "any"
                 }
               }
