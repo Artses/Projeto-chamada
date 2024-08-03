@@ -33,6 +33,20 @@ export default {
         });
         res.status(202).json(professores);
     },
+
+    async atualizarSenha(req, res, id) {
+        const professores = await prisma.professor.update({
+            where: {
+                idProfessor: id
+            },
+            data: {  
+                Nome: req.body.nome,   
+                Senha: req.body.senha,      
+                Materia: req.body.materia
+            }
+        });
+        res.status(202).json(professores);
+    },
     
     async deletarProfessor(req, res, id){
         const professores = await prisma.professor.delete({

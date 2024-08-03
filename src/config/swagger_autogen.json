@@ -22,23 +22,6 @@
       },
       "post": {
         "description": "",
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "nome": {
-                  "example": "any"
-                },
-                "status": {
-                  "example": true
-                }
-              }
-            }
-          }
-        ],
         "responses": {
           "default": {
             "description": ""
@@ -55,21 +38,6 @@
             "in": "path",
             "required": true,
             "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "nome": {
-                  "example": "any"
-                },
-                "status": {
-                  "example": true
-                }
-              }
-            }
           }
         ],
         "responses": {
@@ -102,18 +70,6 @@
             "in": "path",
             "required": true,
             "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "status": {
-                  "example": true
-                }
-              }
-            }
           }
         ],
         "responses": {
@@ -231,6 +187,36 @@
         }
       }
     },
+    "/escola/atualizarSenha/{idEscola}": {
+      "patch": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "idEscola",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "Senha": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      }
+    },
     "/escola/login": {
       "post": {
         "description": "",
@@ -344,6 +330,42 @@
         "responses": {
           "200": {
             "description": "OK"
+          }
+        }
+      }
+    },
+    "/professor/atualizaSenha/{professorId}": {
+      "patch": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "professorId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "nome": {
+                  "example": "any"
+                },
+                "senha": {
+                  "example": "any"
+                },
+                "materia": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Accepted"
           }
         }
       }

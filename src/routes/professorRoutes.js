@@ -16,6 +16,11 @@ router.put('/:professorId', async (req, res) =>{
     await professorServices.atualizarProfessor(req, res, id)
 });
 
+router.patch('/atualizaSenha/:professorId', async (req, res) =>{
+    const id = parseInt(req.params.professorId);
+    await professorServices.atualizarSenha(req, res, id)
+});
+
 router.delete('/:professorId', async (req, res) =>{
     const id = parseInt(req.params.professorId);
     await professorServices.deletarProfessor(req, res, id)

@@ -40,6 +40,19 @@ export default {
         res.status(201).json(updateEscola);
     },
 
+    async atualizarSenha(req, res, id) {
+        const updateEscola = await prisma.escola.update(
+            {
+                where: {
+                    idEscola: id,
+                },
+                data: {
+                    Senha: req.body.Senha,
+                }
+            });
+        res.status(201).json(updateEscola);
+    },
+
     async deletarEscola(req, res, id) {
         const deleteEscola = await prisma.escola.delete({
             where: {
